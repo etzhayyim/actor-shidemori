@@ -1,0 +1,48 @@
+(ns shidemori.registry-seed-test
+  (:require [clojure.edn :as edn]
+            [clojure.string :as str]
+            [clojure.test :refer [deftest is testing]]))
+
+(def seed (edn/read-string (slurp "registry/registries.seed.edn")))
+(def registries (get seed "registries"))
+(def record-kinds
+  #{"death-registration-authority" "death-certificate-issuer"
+    "burial-cremation-permit" "civil-registry-office" "intl-guidance"})
+(def timestamp-pattern #"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z$")
+
+(deftest registry-shape
+  (is (map? seed))
+  (is (seq registries)))
+
+(deftest registry-ids-are-present-and-unique
+  (let [ids (map #(get % "registryId") registries)]
+    (is (every? seq ids))
+    (is (= (count ids) (count (set ids))))))
+
+(deftest entries-ship-fail-closed
+  (is (every? #(= "unverified-seed" (get % "verificationStatus")) registries)))
+
+(deftest provenance-is-complete
+  (doseq [entry registries]
+    (testing (get entry "registryId")
+      (doseq [field ["accessUrl" "provenance"]]
+        (is (re-find #"^https?://" (get entry field ""))))
+      (is (re-matches timestamp-pattern (get entry "lastVerified" ""))))))
+
+(deftest registry-has-worldwide-coverage
+  (is (every? #(seq (get % "jurisdiction")) registries))
+  (is (<= 12 (count (set (map #(get % "jurisdiction") registries))))))
+
+(deftest record-kinds-remain-closed
+  (is (every? #(contains? record-kinds (get % "recordKind")) registries)))
+
+(deftest notes-preserve-scope-boundary
+  (doseq [entry registries]
+    (let [notes (str/lower-case (get entry "notes" ""))]
+      (is (str/includes? notes "mortuary") (get entry "registryId"))
+      (is (str/includes? notes "commercial") (get entry "registryId")))))
+
+(deftest freshness-window-is-positive-integer
+  (let [days (get seed "freshnessWindowDays")]
+    (is (integer? days))
+    (is (pos? days))))
