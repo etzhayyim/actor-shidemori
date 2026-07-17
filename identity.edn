@@ -1,0 +1,5 @@
+{:identity/id "did:web:shidemori.etzhayyim.com"
+ :identity/actor "shidemori"
+ :identity/canonical-document "manifest.edn"
+ :identity/external-did-document ".well-known/did.json"
+ :identity/canonical-format :edn}

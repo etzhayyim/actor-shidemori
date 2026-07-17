@@ -1,7 +1,7 @@
 # shidemori death-registration registry — Verification Workflow (G14)
 
 Per ADR-2605263800 (G14 verified-entry-only routing). Every entry in
-`registry/registries.seed.json` ships `verificationStatus = unverified-seed`, and
+`registry/registries.seed.edn` ships `verificationStatus = unverified-seed`, and
 **no entry may be presented to a bereaved member as an authoritative
 death-registration deadline until a human has re-verified it against the cited
 law**. This file documents how an entry is moved through the three tiers — the

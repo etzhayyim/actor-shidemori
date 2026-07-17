@@ -97,8 +97,8 @@ See ADR-2605263800 §6.
 
 ## Related Files
 
-- `/20-actors/shidemori/manifest.jsonld`
-- `/20-actors/shidemori/CLAUDE.md`
+- `manifest.edn` (canonical actor contract)
+- `CLAUDE.md`
 - `/00-contracts/lexicons/com/etzhayyim/shidemori/` (5 Lexicons + README)
 - `/90-docs/adr/2605263800-shidemori-memorial-cemetery-tier-b-actor-r0.md`
 - `/90-docs/adr/2605263400-musubi-covenant-ceremony-tier-b-actor-r0.md` — TIGHT pair
