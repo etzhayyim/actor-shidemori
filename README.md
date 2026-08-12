@@ -5,12 +5,19 @@
 **ADR**: ADR-2605263800 (R0 scaffold; **FINAL gap-closure** of 10-actor 30min-loop wave)
 **Status**: R0 scaffold (2026-05-26) — 6 cells path-reserved + 5 Lexicon skeletons
 **Cross-actor**: musubi.funeral_ceremony (TIGHT memorial NFT mint pair) / chigiri.inheritanceChain (TIGHT succession handoff pair) / Land Registry (waqf-equivalent cemetery; mizuho G11 pattern shared) / toritate (cemetery maintenance + external mortuary Public Fund) / kokoro.grief_support (post-funeral grief continuity) / kazaori (mass-fatality memorial; path-reserved shidemori at R0) / kataribe (memorial publication + cross-doctrinal grief literature)
+**Canonical repository**: `etzhayyim/actor-shidemori`
 
 ## Overview
 
 Religious-corp memorial + cemetery substrate. FINAL gap-closure
 actor; completes the 10-actor 30min-loop wave (audit list:
 chigiri/toritate/iyashi/mizuho/kazaori/musubi/wakai/kataribe/kokoro/shidemori).
+
+Within the Tamaki artificial organism, shidemori is the memorial and cemetery
+coordination organ. It may preserve opted-in directives and coordinate
+cross-doctrinal remembrance, but it cannot impose an afterlife doctrine,
+provide state-licensed mortuary services, mandate burial, or bypass member,
+Council, Land Trust, and licensed-professional boundaries.
 
 - **Memorial NFT mint** — per-deceased upon musubi.funeral_ceremony
 - **Cemetery Land Registry** — waqf-equivalent inalienability
