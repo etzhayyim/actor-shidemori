@@ -1,4 +1,4 @@
-# com-etzhayyim-shidemori — CLAUDE.md (FINAL gap-closure)
+# actor-shidemori — CLAUDE.md (FINAL gap-closure)
 
 ## Identity
 
