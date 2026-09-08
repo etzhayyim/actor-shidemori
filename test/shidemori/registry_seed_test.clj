@@ -1,6 +1,6 @@
 (ns shidemori.registry-seed-test
   (:require [clojure.edn :as edn]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [clojure.test :refer [deftest is testing]]))
 
 (def seed (edn/read-string (slurp "registry/registries.seed.edn")))
@@ -38,7 +38,7 @@
 
 (deftest notes-preserve-scope-boundary
   (doseq [entry registries]
-    (let [notes (str/lower-case (get entry "notes" ""))]
+    (let [notes (str/lower (get entry "notes" ""))]
       (is (str/includes? notes "mortuary") (get entry "registryId"))
       (is (str/includes? notes "commercial") (get entry "registryId")))))
 
