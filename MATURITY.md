@@ -15,4 +15,4 @@
 ### 2026-06-17 (loop) — manifest+lexicon charter-gate test (構造ゲート pin)
 既存 registry-seed テストが被覆していなかった **manifest G1–G13 + 5 lexicon の dignity ゲート(ロスター最密 const 台帳)**を `test/shidemori/methods/test_charter_gates.cljk` で固定する。canonical `manifest.edn` と `lex/*.edn` を直接検証し、外部交換用 JSON は `wire/` に隔離する。
 
-> **2026-07-17 multirepo migration:** the charter-gate test is Clojure/EDN-only (`test/shidemori/methods/test_charter_gates.cljk`). Run the standalone suite with `bb --classpath src:test run_tests.cljk`.
+> **2026-07-17 multirepo migration:** the charter-gate test is Clojure/EDN-only (`test/shidemori/methods/test_charter_gates.cljk`). Run the standalone suite with `kbb --classpath src:test run_tests.cljk`.
