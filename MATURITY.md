@@ -13,6 +13,6 @@
 - 2026-06-02 registry hardening: the death-registration seed contains 130 entries / 31 jurisdictions with fail-closed `unverified-seed` status. The canonical dataset is now `registry/registries.seed.edn`; its external JSON projection is `wire/registries.seed.json`. See `registry/VERIFICATION.md` for the human verification gates.
 
 ### 2026-06-17 (loop) — manifest+lexicon charter-gate test (構造ゲート pin)
-既存 registry-seed テストが被覆していなかった **manifest G1–G13 + 5 lexicon の dignity ゲート(ロスター最密 const 台帳)**を `test/shidemori/methods/test_charter_gates.cljc` で固定する。canonical `manifest.edn` と `lex/*.edn` を直接検証し、外部交換用 JSON は `wire/` に隔離する。
+既存 registry-seed テストが被覆していなかった **manifest G1–G13 + 5 lexicon の dignity ゲート(ロスター最密 const 台帳)**を `test/shidemori/methods/test_charter_gates.cljk` で固定する。canonical `manifest.edn` と `lex/*.edn` を直接検証し、外部交換用 JSON は `wire/` に隔離する。
 
-> **2026-07-17 multirepo migration:** the charter-gate test is Clojure/EDN-only (`test/shidemori/methods/test_charter_gates.cljc`). Run the standalone suite with `bb --classpath src:test run_tests.clj`.
+> **2026-07-17 multirepo migration:** the charter-gate test is Clojure/EDN-only (`test/shidemori/methods/test_charter_gates.cljk`). Run the standalone suite with `bb --classpath src:test run_tests.cljk`.
