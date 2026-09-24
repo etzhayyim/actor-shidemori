@@ -1,6 +1,6 @@
 (ns shidemori.repository-contract-test
   (:require [clojure.edn :as edn]
-            [clojure.test :refer [deftest is]]
+            [kotoba.test :refer [deftest is]]
             [clojure.java.io :as io]))
 
 (deftest canonical-repository-shape
