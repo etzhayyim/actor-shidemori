@@ -1,13 +1,13 @@
 (ns shidemori.repository-contract-test
   (:require [kotoba.lang.edn :as edn]
             [kotoba.test :refer [deftest is]]
-            [clojure.java.io :as io]))
+            [kotoba.io :as io]))
 
 (deftest canonical-repository-shape
   (doseq [path ["manifest.edn" "identity.edn" "dependencies.edn" "repository-contracts.edn"
                 "registry/registries.seed.edn"]]
     (is (map? (edn/read-string (slurp path))) path))
-  (is (not (.exists (io/file "manifest.jsonld"))))
-  (is (not (.exists (io/file "run_tests.sh"))))
-  (is (= 5 (count (filter #(and (.isFile %) (.endsWith (.getName %) ".edn"))
-                          (file-seq (io/file "lex")))))))
+  (is (not (io/exists? (io/file "manifest.jsonld"))))
+  (is (not (io/exists? (io/file "run_tests.sh"))))
+  (is (= 5 (count (filter #(and (io/file? %) (.endsWith (io/file-name %) ".edn"))
+                          (io/file-seq (io/file "lex")))))))
